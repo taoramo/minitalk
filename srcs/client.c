@@ -65,6 +65,13 @@ int	str_to_sig(pid_t pid, char *s)
 
 int	main(int argc, char **argv)
 {
+	struct sigaction	sa;
+
+	sigemptyset(&sa.sa_mask);
+	sigaddset(&sa.sa_mask, SIGUSR1);
+	sigaddset(&sa.sa_mask, SIGUSR2);
+	sigaction(SIGUSR1, &sa, 0);
+	sigaction(SIGUSR2, &sa, 0);
 	if (argc != 3 || ft_atou(argv[1]) == 0)
 	{
 		ft_printf("Invalid arguments.\n");

@@ -38,7 +38,7 @@ clean:
 	make -C ./libft/ clean
 
 fclean: clean
-	rm -rf $(SERVER_NAME) $(CLIENT_NAME)
+	rm -rf $(SERVER_NAME) $(CLIENT_NAME) $(SERVER_BONUS_NAME) $(CLIENT_BONUS_NAME)
 	make fclean -C ./libft/
 
 re: fclean all
